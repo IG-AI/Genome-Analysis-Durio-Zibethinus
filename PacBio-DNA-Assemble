@@ -1,3 +1,5 @@
+#!/bin/bash
+
 canu -correct \
   -p durio_zibethinus -d PacBio \
   genomeSize=226.1g \
