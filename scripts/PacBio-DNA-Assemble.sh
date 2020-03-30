@@ -1,12 +1,12 @@
 #!/bin/bash -l
 
-SBATCH -A g2020008
-SBATCH -p core
-SBATCH -n 2
-SBATCH -t 24:00:00
-SBATCH -J PacBio_Assembly
-SBATCH --mail-type=ALL
-SBATCH --mail-user daniel.agstrand.5971@student.uu.se
+#SBATCH -A g2020008
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -t 24:00:00
+#SBATCH -J PacBio_Assembly
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user daniel.agstrand.5971@student.uu.se
 
 module load bioinfo-tools
 module load canu
