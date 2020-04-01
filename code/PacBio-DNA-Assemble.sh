@@ -12,7 +12,7 @@ module load bioinfo-tools
 module load canu
 
 canu -correct \
-  -p durio_zibethinus -d PacBio \
+  -p durio_zibethinus -d data/corrected_data \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
@@ -20,17 +20,17 @@ canu -correct \
   -pacbio-raw  /proj/g2020008/5_Tean_Teh_2017/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
 canu -trim \
-  -p durio_zibethinus -d PacBio \
+  -p durio_zibethinus -d data/trimmed_data \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
   stopOnLowCoverage=10 \
-  -pacbio-corrected PacBio/durio_zibethinus.correctedReads.fasta.gz
+  -pacbio-corrected data/corrected_data/durio_zibethinus.correctedReads.fasta.gz
 
 canu -assemble \
-  -p durio_zibethinus -d PacBio \
-  genomeSize=26551601m \
+  -p durio_zibethinus -d data/assemble_data \
+  genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
   stopOnLowCoverage=10 \
-  -pacbio-corrected PacBio/durio_zibethinus.trimmedReads.fasta.gz
+  -pacbio-corrected data/trimmed_data/durio_zibethinus.trimmedReads.fasta.gz
