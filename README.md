@@ -24,10 +24,12 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 | FastQC      | Illumina reads               | Illumina - Reads Quality Control |
 | Trimmomatic | Illumina reads               | Adapter trimming                 |
 | Canu        | PacBio reads                 | DNA assembly                     |
-| Spades      | Illumina reads               | DNA assembly quality assessment  |
+| Pilon	      | PacBio reads   	             | DNA assembly correction	        |
 | Trinity1    | Illumina RNA                 | Transcriptome assembly           |
 | Maker2      | Eukaryotes information       | Annotation                       |
-| Deseq2      | Eukaryotes info              | Differential Expression          |
+| Tophat      | Assembled Genome and Illumina RNA      | Map RNA-Seq reads to genome, differential expression |
+| HTSeq       | Mapped genome	             | Counting reads mapped to genome, differential expression  |
+| Deseq2      | Data from HTSeq       | Statistical analysis of HTSeq data, differential expression |
 | Blastp      | Protein sequences            | Gene compersion                  |
 
 ## Data
@@ -36,6 +38,39 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 3. Illumina short RNA reads of Musang King, Durio zibethinus from the Sequence Read Archive (SRA), NCBI
 4. Protein sequence of sulphur producing odor molecule in Allium cepa from NCBI
 5. Protein sequence of sulphur producing odor molecule of Monthong, Durio zibethinus from NCBI
+
+### Data Structure
+genome_analyses/
+|----analyses
+|    |----preprocesses
+|    |    |----pacBio
+|    |    |----illumina
+|    |----assembly
+|    |    |----pacBio
+|    |    |----illumina
+|    |----transcriptome_assembly
+|    |----annotation
+|    |----differential_expression
+|    |    |----tophat
+|    |    |----htseq
+|    |    |----deseq2
+|    |----gene compersion
+|----code
+|    |----PacBio-DNA-Assemble.sh
+|    |----Illumina-DNA-Preprocesses.sh
+|    |----Illumina-DNA-Assembly.sh
+|    |----Transcriptome-Assembly.sh
+|    |----Annotation.sh
+|    |----Differential-Expression.sh
+|    |----Gene-Compersion.sh
+|----data
+|    |----metadata
+|    |----raw_data
+|    |    |----SRR6037732_scaffold_06.fq.gzcd
+|    |----trimmed_data
+|    |----assemble_data
+|    |----corrected_data
+
 
 ## Timeplan
 | Task                                                    | Time period          | Predicted time duration |
