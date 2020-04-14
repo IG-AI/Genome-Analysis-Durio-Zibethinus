@@ -40,6 +40,7 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 5. Protein sequence of sulphur producing odor molecule of Monthong, Durio zibethinus from NCBI
 
 ### Data Structure
+```
 genome_analyses/
 |----analyses
 |    |----preprocesses
@@ -70,7 +71,7 @@ genome_analyses/
 |    |----trimmed_data
 |    |----assemble_data
 |    |----corrected_data
-
+```
 
 ## Timeplan
 | Task                                                    | Time period          | Predicted time duration |
