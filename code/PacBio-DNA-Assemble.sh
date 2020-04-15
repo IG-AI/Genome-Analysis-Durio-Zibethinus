@@ -16,7 +16,6 @@ canu -correct \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  stopOnLowCoverage=10 \
   -pacbio-raw  /proj/g2020008/5_Tean_Teh_2017/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
 canu -trim \
@@ -24,7 +23,6 @@ canu -trim \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  stopOnLowCoverage=10 \
   -pacbio-corrected data/corrected_data/durio_zibethinus.correctedReads.fasta.gz
 
 canu -assemble \
@@ -32,5 +30,4 @@ canu -assemble \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  stopOnLowCoverage=10 \
   -pacbio-corrected data/trimmed_data/durio_zibethinus.trimmedReads.fasta.gz
