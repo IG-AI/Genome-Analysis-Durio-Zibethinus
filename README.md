@@ -24,7 +24,7 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 | FastQC      | Illumina reads               | Illumina - Reads Quality Control |
 | Trimmomatic | Illumina reads               | Adapter trimming                 |
 | Canu        | PacBio reads                 | DNA assembly                     |
-| Pilon	      | PacBio reads   	             | DNA assembly correction	        |
+| Pilon	      | PacBio reads and illumina reads   	             | DNA assembly and correction	        |
 | Trinity1    | Illumina RNA                 | Transcriptome assembly           |
 | Maker2      | Eukaryotes information       | Annotation                       |
 | Tophat      | Assembled Genome and Illumina RNA      | Map RNA-Seq reads to genome, differential expression |
@@ -66,8 +66,8 @@ genome_analyses/
 |    |----Gene-Compersion.sh
 |----data
 |    |----metadata
-|    |----raw_data
-|    |    |----SRR6037732_scaffold_06.fq.gzcd
+|    |----raw_data ->
+/proj/g2020008/5_Tean_Teh_2017/
 |    |----trimmed_data
 |    |----assemble_data
 |    |----corrected_data
