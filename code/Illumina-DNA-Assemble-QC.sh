@@ -13,7 +13,7 @@ module load FastQC/0.11.8
 
 #Quality control 
 fastqc \
- /proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
- /proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \
+ data/raw_data//illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
+ data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \
  --extract \
  --outdir=data/corrected_data/

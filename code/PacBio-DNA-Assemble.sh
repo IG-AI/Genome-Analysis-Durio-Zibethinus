@@ -16,7 +16,7 @@ canu -correct \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  -pacbio-raw  /proj/g2020008/5_Tean_Teh_2017/pacbio_data/SRR6037732_scaffold_06.fq.gz
+  -pacbio-raw  data/raw_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
 canu -trim \
   -p durio_zibethinus -d data/trimmed_data \
