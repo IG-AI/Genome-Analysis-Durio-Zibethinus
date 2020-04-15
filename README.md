@@ -22,9 +22,10 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 |-------------|------------------------------|----------------------------------|
 | inside Canu | PacBio reads                 | PacBio - Reads Quality Control   |
 | FastQC      | Illumina reads               | Illumina - Reads Quality Control |
-| Trimmomatic | Illumina reads               | Adapter trimming                 |
 | Canu        | PacBio reads                 | DNA assembly                     |
-| Pilon	      | PacBio reads and illumina reads   	             | DNA assembly and correction	        |
+| BWA         | PacBio genome, Illumina reads                 | Align Illumina reads to PacBio genome                     |
+| Samtools        | Sam file                | Covert Sam file to Bam file                     |
+| Pilon	      | PacBio reads and Illumina reads   	             | DNA assembly and correction	        |
 | Trinity1    | Illumina RNA                 | Transcriptome assembly           |
 | Maker2      | Eukaryotes information       | Annotation                       |
 | Tophat      | Assembled Genome and Illumina RNA      | Map RNA-Seq reads to genome, differential expression |
