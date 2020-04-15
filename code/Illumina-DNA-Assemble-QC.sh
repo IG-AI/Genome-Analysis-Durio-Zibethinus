@@ -13,6 +13,6 @@ module load FastQC/0.11.8
 
 #Quality control 
 fastqc \
- data/raw_data//illumina_data/SRR6058604_scaffold_06.*P* \
+ data/raw_data/illumina_data/SRR6058604_scaffold_06.*P* \
  --extract \
  --outdir=data/quality_control/

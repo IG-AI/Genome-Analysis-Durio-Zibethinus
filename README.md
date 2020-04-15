@@ -66,8 +66,8 @@ genome_analyses/
 |    |----Gene-Compersion.sh
 |----data
 |    |----metadata
-|    |----raw_data
-|    |    |----SRR6037732_scaffold_06.fq.gzcd
+|    |----raw_data ->
+/proj/g2020008/5_Tean_Teh_2017/
 |    |----trimmed_data
 |    |----assemble_data
 |    |----corrected_data
