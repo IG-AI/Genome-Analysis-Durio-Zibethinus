@@ -10,12 +10,10 @@
 
 module load bioinfo-tools
 module load FastQC/0.11.8
-module load trimmomatic/0.36
-
 
 #Quality control 
 fastqc \
- proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
- proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
+ /proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
+ /proj/g2020008/5_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \
  --extract \
  --outdir=data/corrected_data/
