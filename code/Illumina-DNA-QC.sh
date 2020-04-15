@@ -2,7 +2,7 @@
 
 #SBATCH -A g2020008
 #SBATCH -p core
-#SBATCH -n 2
+#SBATCH -n 1
 #SBATCH -t 01:00:00
 #SBATCH -J Illumina_Assembly
 #SBATCH --mail-type=ALL
