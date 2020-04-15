@@ -22,13 +22,8 @@ bwa index \
 bwa mem \
  -t 4 \
  data/references_data/PacBio_ref \
- data/raw_data/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz > data/align_data/SRR6058604_scaffold_06.1P.sai
-
-bwa mem \
- -t 4 \
- data/references_data/PacBio_ref \
- data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \
- data/raw_data/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz > data/align_data/SRR6058604_scaffold_06.sam
+ data/raw_data/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
+ data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz > data/align_data/SRR6058604_scaffold_06.sam
 
 # Generate BAM-file
 samtools view \
@@ -47,4 +42,3 @@ pilon \
  --outdir data/assemble_data/Illumina \
  --threads 4 \
  --diploid
-
