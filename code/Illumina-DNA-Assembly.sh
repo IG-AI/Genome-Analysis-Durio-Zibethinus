@@ -1,9 +1,9 @@
-#!/bin/bash -l
+#!/bin/bash
 
 #SBATCH -A g2020008
 #SBATCH -p core
 #SBATCH -n 2
-#SBATCH -t 12:00:00
+#SBATCH -t 01:00:00
 #SBATCH -J Illumina_Assembly
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user daniel.agstrand.5971@student.uu.se
@@ -23,22 +23,29 @@ bwa mem \
  -t 4 \
  data/references_data/PacBio_ref \
  data/raw_data/illumina_data/SRR6058604_scaffold_06.1P.fastq.gz \
- data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz > data/align_data/SRR6058604_scaffold_06.sam
+ data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \ 
+ > data/align_data/SRR6058604_scaffold_06.sam
 
 # Generate BAM-file
 samtools view \
  -bT \
  data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
- data/align_data/SRR6058604_scaffold_06.sam > data/align_data/SRR6058604_scaffold_06.bam 
+ data/align_data/SRR6058604_scaffold_06.sam \
+ > data/align_data/SRR6058604_scaffold_06.bam 
 
 samtools sort \
  -O bam \
  -o data/align_data/SRR6058604_scaffold_06.sorted.bam \
- -T temp data/align_data/SRR6058604_scaffold_06.bam 
+ -T temp data/align_data/SRR6058604_scaffold_06.bam \
 
-# Assemble genome
+samtools index \
+ -b \
+ data/align_data/SRR6058604_scaffold_06.sorted.bam
+
+# Assemble genome                                                                                                                                                                                              
 pilon \
- --bam data/align_data/SRR6058604_scaffold_06.bam \
+ --genome data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
+ --frags data/align_data/SRR6058604_scaffold_06.sorted.bam \
  --outdir data/assemble_data/Illumina \
  --threads 4 \
  --diploid

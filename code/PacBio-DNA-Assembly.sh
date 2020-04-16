@@ -10,6 +10,7 @@
 
 module load bioinfo-tools
 module load canu
+module load samtools/1.10
 
 canu -correct \
   -p durio_zibethinus -d data/corrected_data \
@@ -31,3 +32,7 @@ canu -assemble \
   executiveThreads=8 \
   executiveMemory=25.6 \
   -pacbio-corrected data/trimmed_data/durio_zibethinus.trimmedReads.fasta.gz
+
+samtools faidx \
+ data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
+ -o data/assemble_data/PacBio/durio_zibethinus.contigs.fai
