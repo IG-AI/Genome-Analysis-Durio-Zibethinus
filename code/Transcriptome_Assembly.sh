@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH -A g2020008
 #SBATCH -p core
@@ -13,13 +13,8 @@ module load trinity/2.9.1
 
 Trinity \
  --seqType fa \
- --max_memory 25.6G \
+ --max_memory 25G \
  --left data/raw_data/transcriptome/trimmed/*06.1* \
  --right data/raw_data/transcriptome/trimmed/*06.2* \
  --CPU 8 \
- --output data/assmemble_data/Transcriptome
-
-
-
-
-
+ --output data/assemble_data/Transcriptome/trinity
