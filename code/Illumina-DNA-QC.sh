@@ -2,8 +2,8 @@
 
 #SBATCH -A g2020008
 #SBATCH -p core
-#SBATCH -n 2
-#SBATCH -t 24:00:00
+#SBATCH -n 1
+#SBATCH -t 01:00:00
 #SBATCH -J Illumina_Assembly
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user daniel.agstrand.5971@student.uu.se
