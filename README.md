@@ -26,11 +26,11 @@ Durian is highly sought after fruit in many countries in east and southeast asia
 | BWA         | PacBio genome, Illumina reads                 | Align Illumina reads to PacBio genome                     |
 | Samtools        | Sam file                | Convert Sam file to Bam file                     |
 | Pilon	      | PacBio reads and Illumina reads   	             | DNA assembly improvement	        |
-| Trinity1    | Illumina RNA                 | Transcriptome assembly           |
-| Maker2      | Eukaryotes information       | Annotation                       |
+| Trinity    | Illumina RNA                 | Transcriptome assembly           |
+| Maker      | Eukaryotes information       | Annotation                       |
 | Tophat      | Assembled Genome and Illumina RNA      | Map RNA-Seq reads to genome, differential expression |
 | HTSeq       | Mapped genome	             | Counting reads mapped to genome, differential expression  |
-| Deseq2      | Data from HTSeq       | Statistical analysis of HTSeq data, differential expression |
+| Deseq      | Data from HTSeq       | Statistical analysis of HTSeq data, differential expression |
 | Blastp      | Protein sequences            | Gene compersion                  |
 
 ## Data
