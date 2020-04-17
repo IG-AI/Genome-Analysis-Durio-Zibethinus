@@ -42,10 +42,12 @@ samtools index \
  -b \
  data/align_data/SRR6058604_scaffold_06.sorted.bam
 
-# Assemble genome                                                                                                                                                                                              
+# Assemble genome                                                                                  
 pilon \
  --genome data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
  --frags data/align_data/SRR6058604_scaffold_06.sorted.bam \
  --outdir data/assemble_data/Illumina \
+ --output durio_zibethinus \
  --threads 4 \
+ --changes \
  --diploid

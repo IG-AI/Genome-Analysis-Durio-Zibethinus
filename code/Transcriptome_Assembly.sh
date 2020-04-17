@@ -9,10 +9,10 @@
 #SBATCH --mail-user daniel.agstrand.5971@student.uu.se
 
 module load bioinfo-tools
-module load trinity/2.9.1
+module load trinity/2.4.0
 
 Trinity \
- --seqType fa \
+ --seqType fq \
  --max_memory 25G \
  --left data/raw_data/transcriptome/trimmed/*06.1* \
  --right data/raw_data/transcriptome/trimmed/*06.2* \
