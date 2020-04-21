@@ -13,7 +13,7 @@ module load bwa/0.7.17
 module load samtools/1.10
 module load Pilon/1.22
 
-# Generate SAM-file
+# Mapping to PacBio referneces genome
 bwa index \
  -p data/references_data/PacBio_ref \
  -a bwtsw  \
@@ -26,7 +26,7 @@ bwa mem \
  data/raw_data/illumina_data/SRR6058604_scaffold_06.2P.fastq.gz \ 
  > data/align_data/SRR6058604_scaffold_06.sam
 
-# Generate BAM-file
+# Convert SAM-file to BAM-file
 samtools view \
  -bT \
  data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
@@ -42,10 +42,12 @@ samtools index \
  -b \
  data/align_data/SRR6058604_scaffold_06.sorted.bam
 
-# Assemble genome                                                                                                                                                                                              
+# Assemble genome                                                                                  
 pilon \
  --genome data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
  --frags data/align_data/SRR6058604_scaffold_06.sorted.bam \
  --outdir data/assemble_data/Illumina \
+ --output durio_zibethinus \
  --threads 4 \
+ --changes \
  --diploid

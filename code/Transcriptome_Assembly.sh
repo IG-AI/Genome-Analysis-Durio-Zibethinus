@@ -44,7 +44,7 @@ Trinity \
 # De novo assembly
 '
 Trinity \
- --seqType fa \
+ --seqType fq \
  --max_memory 25G \
  --left data/raw_data/transcriptome/trimmed/*06.1* \
  --right data/raw_data/transcriptome/trimmed/*06.2* \
