@@ -90,6 +90,153 @@ genome_analyses/
 
 
 ## Results
+### Illumina Forward DNA Read Quality
+|      |                              |                                    | 
+|------|------------------------------|------------------------------------| 
+| PASS | Basic Statistics             | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Per base sequence quality    | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Per sequence quality scores  | SRR6058604_scaffold_06.1P.fastq.gz | 
+| WARN | Per base sequence content    | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Per sequence GC content      | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Per base N content           | SRR6058604_scaffold_06.1P.fastq.gz | 
+| WARN | Sequence Length Distribution | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Sequence Duplication Levels  | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Overrepresented sequences    | SRR6058604_scaffold_06.1P.fastq.gz | 
+| PASS | Adapter Content              | SRR6058604_scaffold_06.1P.fastq.gz | 
+
+### Illumina Reverse DNA Read Quality
+|      |                              |                                    | 
+|------|------------------------------|------------------------------------| 
+| PASS | Basic Statistics             | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Per base sequence quality    | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Per sequence quality scores  | SRR6058604_scaffold_06.2P.fastq.gz | 
+| WARN | Per base sequence content    | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Per sequence GC content      | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Per base N content           | SRR6058604_scaffold_06.2P.fastq.gz | 
+| WARN | Sequence Length Distribution | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Sequence Duplication Levels  | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Overrepresented sequences    | SRR6058604_scaffold_06.2P.fastq.gz | 
+| PASS | Adapter Content              | SRR6058604_scaffold_06.2P.fastq.gz | 
+
+### PacBio DNA Read Quality
+|      |                              |                              | 
+|------|------------------------------|------------------------------| 
+| PASS | Basic Statistics             | SRR6037732_scaffold_06.fq.gz | 
+| FAIL | Per base sequence quality    | SRR6037732_scaffold_06.fq.gz | 
+| FAIL | Per sequence quality scores  | SRR6037732_scaffold_06.fq.gz | 
+| WARN | Per base sequence content    | SRR6037732_scaffold_06.fq.gz | 
+| WARN | Per sequence GC content      | SRR6037732_scaffold_06.fq.gz | 
+| PASS | Per base N content           | SRR6037732_scaffold_06.fq.gz | 
+| WARN | Sequence Length Distribution | SRR6037732_scaffold_06.fq.gz | 
+| PASS | Sequence Duplication Levels  | SRR6037732_scaffold_06.fq.gz | 
+| PASS | Overrepresented sequences    | SRR6037732_scaffold_06.fq.gz | 
+| PASS | Adapter Content              | SRR6037732_scaffold_06.fq.gz | 
+
+### PacBio Assembly Quality
+|                             |                          | 
+|-----------------------------|--------------------------| 
+| ****Assembly****                    | ****Durio zibethinus**** | 
+| **contigs (>= 0 bp)**        | 981                      | 
+| **contigs (>= 1000 bp)**      | 981                      | 
+| **contigs (>= 5000 bp)**      | 896                      | 
+| **contigs (>= 10000 bp)**     | 590                      | 
+| **contigs (>= 25000 bp)**     | 137                      | 
+| **contigs (>= 50000 bp)**    | 64                       | 
+| Total length (>= 0 bp)      | 37535010                 | 
+| Total length (>= 1000 bp)   | 37535010                 | 
+| Total length (>= 5000 bp)   | 37271620                 | 
+| Total length (>= 10000 bp)  | 34971779                 | 
+| Total length (>= 25000 bp)  | 28025466                 | 
+| Total length (>= 50000 bp)  | 25759419                 | 
+| **contigs**                   | 981                      | 
+| Largest contig              | 1979337                  | 
+| Total length                | 37535010                 | 
+| Reference length            | 26551601                 | 
+| GC (%)                      | 30.97                    | 
+| Reference GC (%)            | 30.98                    | 
+| N50                         | 380819                   | 
+| NG50                        | 546284                   | 
+| N75                         | 24321                    | 
+| NG75                        | 354531                   | 
+| L50                         | 27                       | 
+| LG50                        | 14                       | 
+| L75                         | 143                      | 
+| LG75                        | 30                       | 
+| **misassemblies**             | 241                      | 
+| **misassembled contigs**     | 134                      | 
+| Misassembled contigs length | 23180502                 | 
+| **local misassemblies**       | 266                      | 
+| **unaligned mis. contigs**    | 19                       | 
+| **unaligned contigs**         | 534 + 260 part           | 
+| Unaligned length            | 7130522                  | 
+| Genome fraction (%)         | 97.251                   | 
+| Duplication ratio           | 1.177                    | 
+| **N's per 100 kbp**          | 0.00                     | 
+| **mismatches per 100 kbp**    | 349.44                   | 
+| **indels per 100 kbp**        | 187.13                   | 
+| Largest alignment           | 1260946                  | 
+| Total aligned length        | 30389958                 | 
+| NA50                        | 158876                   | 
+| NGA50                       | 281393                   | 
+| NA75                        | 12978                    | 
+| NGA75                       | 129274                   | 
+| LA50                        | 49                       | 
+| LGA50                       | 25                       | 
+| LA75                        | 289                      | 
+| LGA75                       | 57                       | 
+
+### Illumina Correction Quality
+|                             |                  | 
+|-----------------------------|------------------| 
+| ****Assembly****                    | ****Durio zibethinus**** | 
+| **contigs (>= 0 bp)**         | 981              | 
+| **contigs (>= 1000 bp)**      | 981              | 
+| **contigs (>= 5000 bp)**      | 896              | 
+| **contigs (>= 10000 bp)**     | 590              | 
+| **contigs (>= 25000 bp)**     | 137              | 
+| **contigs (>= 50000 bp)**    | 64               | 
+| Total length (>= 0 bp)      | 37518394         | 
+| Total length (>= 1000 bp)   | 37518394         | 
+| Total length (>= 5000 bp)   | 37254985         | 
+| Total length (>= 10000 bp)  | 34954926         | 
+| Total length (>= 25000 bp)  | 28007139         | 
+| Total length (>= 50000 bp)  | 25740609         | 
+| **contigs**                   | 981              | 
+| Largest contig              | 1977600          | 
+| Total length                | 37518394         | 
+| Reference length            | 26551601         | 
+| GC (%)                      | 30.98            | 
+| Reference GC (%)            | 30.98            | 
+| N50                         | 380517           | 
+| NG50                        | 546186           | 
+| N75                         | 24314            | 
+| NG75                        | 354321           | 
+| L50                         | 27               | 
+| LG50                        | 14               | 
+| L75                         | 143              | 
+| LG75                        | 30               | 
+| **misassemblies**             | 233              | 
+| **misassembled contigs**      | 132              | 
+| Misassembled contigs length | 22821315         | 
+| **local misassemblies**       | 274              | 
+| **unaligned mis. contigs**    | 19               | 
+| **unaligned contigs**         | 528 + 266 part   | 
+| Unaligned length            | 7158836          | 
+| Genome fraction (%)         | 97.284           | 
+| Duplication ratio           | 1.175            | 
+| **N's per 100 kbp**           | 0.00             | 
+| **mismatches per 100 kbp**    | 304.51           | 
+| **indels per 100 kbp**        | 131.43           | 
+| Largest alignment           | 1260843          | 
+| Total aligned length        | 30344629         | 
+| NA50                        | 160039           | 
+| NGA50                       | 302694           | 
+| NA75                        | 12949            | 
+| NGA75                       | 129300           | 
+| LA50                        | 47               | 
+| LGA50                       | 23               | 
+| LA75                        | 287              | 
+| LGA75                       | 55               | 
 
 ## Discussion
 
