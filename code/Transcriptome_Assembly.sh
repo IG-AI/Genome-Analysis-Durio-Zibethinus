@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 24:00:00
-#SBATCH -J Transcriptome_BAM-file
+#SBATCH -J Transcriptome_Assembly
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user daniel.agstrand.5971@student.uu.se
 
@@ -12,42 +12,43 @@ module load bioinfo-tools
 module load star
 module load trinity
 
-dir=data/raw_data/transcriptome/trimmed
-
 # Generate index
+
 STAR \
  --runMode genomeGenerate \
  --runThreadN 8 \
  --genomeDir data/align_data/Transcriptome/star \
- --genomeFastaFiles data/assemble_data/Illumina/durio_zibethinus.fasta
+ --genomeSAindexNbases 13 \
+ --genomeFastaFiles data/assemble_data/Illumina/durio_zibethinus.fasta 
 
 # Mapping reads
-STAR \
- --runThreadN 8 \
- --readFilesIn $dir/SRR6040092_scaffold_06.1.fastq.gz,$dir/SRR6040092_scaffold_06.2.fastq.gz,$dir/SRR6040093_scaffold_06.1.fastq.gz,$dir/SRR6040093_scaffold_06.2.fastq.gz,$dir/SRR6040094_scaffold_06.1.fastq.gz,$dir/SRR6040094_scaffold_06.2.fastq.gz,$dir/SRR6040096_scaffold_06.1.fastq.gz,$dir/SRR6040096_scaffold_06.2.fastq.gz,$dir/SRR6040097_scaffold_06.1.fastq.gz,$dir/SRR6040097_scaffold_06.2.fastq.gz,$dir/SRR6156066_scaffold_06.1.fastq.gz,$dir/SRR6156066_scaffold_06.2.fastq.gz,$dir/SRR6156067_scaffold_06.1.fastq.gz
-,$dir/SRR6156067_scaffold_06.2.fastq.gz
-,$dir/SRR6156069_scaffold_06.1.fastq.gz
-,$dir/SRR6156069_scaffold_06.2.fastq.gz \
- --outFileNamePrefix data/align_data/Transcriptome/star/durio_zibethinus \
- --outSAMtype BAM Unsorted SortedByCoordinate \
- --readFilesCommand gunzip -c \
- --outSAMunmapped None
 
-# Assamble reads
-Trinity \
- --genome_guided_bam data/align_data/Transcriptome/star/*.bam \
- --max_memory 25G \
- --CPU 8 \
- --genome_guided_max_intron 10000 \
- --output data/assemble_data/Transcriptome/trinity
+files=( $(ls -d /home/daniagst/Genome-Analysis/data/raw_data/transcriptome/trimmed/*06.*.*) )
 
-# De novo assembly
-'
-Trinity \
- --seqType fq \
- --max_memory 25G \
- --left data/raw_data/transcriptome/trimmed/*06.1* \
- --right data/raw_data/transcriptome/trimmed/*06.2* \
- --CPU 8 \
- --output data/assemble_data/Transcriptome/trinity
-'
+for (( i=0; i<${#files[@]} ; i+=2 )) ;
+do
+    p1=$(echo "${files[i]}")
+    p2=$(echo "${files[i+1]}")
+    filename=${p1##*trimmed/}
+    filename=${filename%_06*}
+
+    STAR \
+	--runThreadN 8 \
+	--limitBAMsortRAM 2616557322 \
+	--genomeDir data/align_data/Transcriptome/star \
+	--readFilesIn $p1 $p2 \
+        --readFilesCommand gunzip -c \
+        --outFileNamePrefix data/align_data/Transcriptome/star/$filename \
+	--outSAMtype BAM SortedByCoordinate \
+	--outSAMunmapped None
+
+    # Assamble reads
+    Trinity \
+	--genome_guided_bam data/align_data/Transcriptome/star/$filename*.bam \
+	--max_memory 25G \
+	--CPU 8 \
+	--genome_guided_max_intron 10000 \
+	--output data/assemble_data/Transcriptome/$filename-trinity
+
+    ls data/assemble_data/Transcriptome/$filename-trinity/* -d | grep -v '.fasta' | xargs rm -rf
+done
