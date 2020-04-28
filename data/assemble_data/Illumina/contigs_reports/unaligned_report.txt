@@ -1,0 +1,8 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                       durio_zibethinus
+# fully unaligned contigs      528             
+Fully unaligned length         4932820         
+# partially unaligned contigs  266             
+Partially unaligned length     2226016         
+# N's                          0               

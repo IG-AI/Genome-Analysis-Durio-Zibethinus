@@ -1,0 +1,136 @@
+/sw/bioinfo/quast/4.5.4/rackham/bin/quast.py data/assemble_data/Illumina/durio_zibethinus.fasta -o data/assemble_data/Illumina/ -R data/assemble_data/Ref/ref_durio_zibethinus.fasta -t 4
+
+Version: 4.5.4
+
+System information:
+  OS: Linux-3.10.0-1062.18.1.el7.x86_64-x86_64-with-centos-7.7.1908-Core (linux_64)
+  Python version: 2.7.6
+  CPUs number: 20
+
+Started: 2020-04-28 18:08:31
+
+Logging to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/quast.log
+NOTICE: Output directory already exists. Existing Nucmer alignments can be used
+
+CWD: /domus/h1/daniagst/Genome-Analysis
+Main parameters: 
+  Threads: 4, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  data/assemble_data/Ref/ref_durio_zibethinus.fasta ==> ref_durio_zibethinus
+
+Contigs:
+  Pre-processing...
+  data/assemble_data/Illumina/durio_zibethinus.fasta ==> durio_zibethinus
+
+2020-04-28 18:08:35
+Running Basic statistics processor...
+  Reference genome:
+    ref_durio_zibethinus.fasta, length = 26551601, num fragments = 1, GC % = 30.98
+  Contig files: 
+    durio_zibethinus
+  Calculating N50 and L50...
+    durio_zibethinus, N50 = 380517, L50 = 27, Total length = 37518394, GC % = 30.98, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/basic_stats/GC_content_plot.pdf
+  Drawing durio_zibethinus GC content plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/basic_stats/durio_zibethinus_GC_content_plot.pdf
+Done.
+
+2020-04-28 18:08:40
+Running Contig analyzer...
+  durio_zibethinus
+  Logging to files /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stdout and contigs_report_durio_zibethinus.stderr...
+  Aligning contigs to the reference
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/nucmer \
+  -c 65 -l 65 --maxmatch -p data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus \
+  --emem -t 4 data/assemble_data/Illumina/quast_corrected_input/ref_durio_zibethinus.fasta \
+  data/assemble_data/Illumina/quast_corrected_input/durio_zibethinus.fasta >> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stdout \
+  2>> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/delta-filter \
+  -i 95.0 -l 0 data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.delta \
+  > data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.fdelta \
+  2> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/mummerplot \
+  --html --layout -p data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus \
+  data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.delta \
+  > data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stdout \
+  2> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/gnuplot/src/gnuplot \
+  data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.gp > \
+  /dev/null 2> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  MUMmer plot saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/durio_zibethinus_mummerplot.html
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/show-coords \
+  data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.delta \
+  > data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.coords_tmp \
+  2> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  /sw/bioinfo/quast/4.5.4/rackham/lib/python2.7/site-packages/quast_libs/MUMmer/show-snps \
+  -S -T -H data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.delta \
+  < data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.coords.headless \
+  > data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.all_snps \
+  2> data/assemble_data/Illumina/contigs_reports/contigs_report_durio_zibethinus.stderr
+  Analysis is finished.
+
+  Gzipping /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.all_snps to reduce disk space usage...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.all_snps.gz
+  Creating total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2020-04-28 18:13:01
+Running NA-NGA calculation...
+  durio_zibethinus, Largest alignment = 1260843, NA50 = 160039, NGA50 = 302694, LA50 = 47, LGA50 = 23
+  Drawing cumulative plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/aligned_stats/NGAx_plot.pdf
+Done.
+
+2020-04-28 18:13:03
+Running Genome analyzer...
+  NOTICE: No file with genes provided. Use the -G option if you want to specify it.
+  NOTICE: No file with operons provided. Use the -O option if you want to specify it.
+  durio_zibethinus
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2020-04-28 18:13:19
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-04-28 18:13:21
+RESULTS:
+  Text versions of total report are saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/report.html
+  PDF version (tables and plots) is saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/report.pdf
+  Icarus (contig browser) is saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/icarus.html
+  Log saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/quast.log
+
+Finished: 2020-04-28 18:13:21
+Elapsed time: 0:04:50.021426
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

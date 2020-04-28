@@ -1,0 +1,16 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                     durio_zibethinus
+# misassemblies              233             
+    # relocations            232             
+    # translocations         0               
+    # inversions             1               
+# misassembled contigs       132             
+Misassembled contigs length  22821315        
+# local misassemblies        274             
+# unaligned mis. contigs     19              
+# mismatches                 78656           
+# indels                     33949           
+    # indels (<= 5 bp)       31708           
+    # indels (> 5 bp)        2241            
+Indels length                73207           

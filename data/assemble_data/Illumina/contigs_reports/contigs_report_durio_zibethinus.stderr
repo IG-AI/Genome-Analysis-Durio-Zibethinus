@@ -1,0 +1,5 @@
+Writing filtered delta file /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.filter
+Reading delta file /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.delta
+Writing plot files /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.fplot, /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.rplot
+Writing gnuplot script /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.gp
+Rendering plot /domus/h1/daniagst/Genome-Analysis/data/assemble_data/Illumina/contigs_reports/nucmer_output/durio_zibethinus.html
