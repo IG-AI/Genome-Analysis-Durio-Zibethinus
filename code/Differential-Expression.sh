@@ -11,6 +11,6 @@
 module load bioinfo-tools
 module load htseq
 
-htseq-count --format=bam --samout=durio_zibethinus_htseq.sam ~/Genome-Analysis/data/align_data/Transcriptome/star/durio_zibethinus_transcriptome.bam ~/Genome-Analysis/data/annotation/durio_zibethinus.all.gtf
+htseq-count --format=bam --samout=durio_zibethinus_htseq.sam ~/Genome-Analysis/data/align_data/Transcriptome/star/durio_zibethinus_transcriptome.bam ~/Genome-Analysis/data/annotation/durio_zibethinus.all.gtf > durio_zibethinus_htseq.count
 
 
