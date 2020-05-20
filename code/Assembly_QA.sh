@@ -10,17 +10,35 @@
 
 module load bioinfo-tools
 module load quast 
+module load MUMmer
 
-# PacBio                                                                                                                                                                                                                        
-quast.py \
-    data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
-    -o data/assemble_data/PacBio/ \
-    -R data/assemble_data/Ref/ref_durio_zibethinus.fasta \
+dir="~/Genome-Analysis/data/assemble_data"
+
+# PacBio QUAST                                                                 quast.py \
+    $dir/PacBio/durio_zibethinus.contigs.fasta \
+    -o $dir/PacBio/ \
+    -R $dir/Ref/ref_durio_zibethinus.fasta \
     -t 4
 
-# Illumina                                                                                                                                                                                                                       
+# Illumina QUAST                                                               
 quast.py \
-    data/assemble_data/Illumina/durio_zibethinus.fasta \
-    -o data/assemble_data/Illumina/ \
-    -R data/assemble_data/Ref/ref_durio_zibethinus.fasta \
+    $dir/Illumina/durio_zibethinus.fasta \
+    -o $dir/Illumina/ \
+    -R $dir/Ref/ref_durio_zibethinus.fasta \
     -t 4
+
+# PacBio MUMmer
+nucmer --threads=4 --maxmatch -p durio_zibethinus_pacbio \
+    $dir/Ref/ref_durio_zibethinus.fasta \
+    $dir/PacBio/default/durio_zibethinus.contigs.fasta
+
+mummerplot --layout -t png --large --filter -p durio_zibethinus_pacbio  \
+    durio_zibethinus_pacbio.delta
+
+# Illumina MUMmer
+nucmer --threads=4 --maxmatch -p durio_zibethinus_illumina \
+    $dir/Ref/ref_durio_zibethinus.fasta \
+    $dir/Illumina/durio_zibethinus.fasta
+
+mummerplot --layout -t png --large --filter -p durio_zibethinus_illumina \
+    durio_zibethinus_illumina.delta

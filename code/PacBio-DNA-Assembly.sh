@@ -10,29 +10,41 @@
 
 module load bioinfo-tools
 module load canu
-module load samtools/1.10
+module load samtools
+
+dir=~/Genome-Analysis/data
+
+# Default option for minOverlapLength=500 and correctedErrorRate=0.045 
 
 canu -correct \
-  -p durio_zibethinus -d data/corrected_data \
+  -p durio_zibethinus_high_sense -d $dir/corrected_data/ \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  -pacbio-raw  data/raw_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
+  useGrid=remote \
+  minOverlapLength=600 \
+  -pacbio-raw $dir/raw_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
 canu -trim \
-  -p durio_zibethinus -d data/trimmed_data \
+  -p durio_zibethinus_high_sense -d $dir/trimmed_data/ \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  -pacbio-corrected data/corrected_data/durio_zibethinus.correctedReads.fasta.gz
+  useGrid=remote \
+  minOverlapLength=600 \
+  correctedErrorRate=0.040 \
+  -pacbio-corrected $dir/corrected_data/durio_zibethinus_high_sense.correctedReads.fasta.gz
 
 canu -assemble \
-  -p durio_zibethinus -d data/assemble_data \
+  -p durio_zibethinus_high_sense -d $dir/assemble_data/PacBio/high_sense \
   genomeSize=26551601 \
   executiveThreads=8 \
   executiveMemory=25.6 \
-  -pacbio-corrected data/trimmed_data/durio_zibethinus.trimmedReads.fasta.gz
+  useGrid=remote \
+  minOverlapLength=600 \
+  correctedErrorRate=0.040 \
+  -pacbio-corrected $dir/trimmed_data/durio_zibethinus_high_sense.trimmedReads.fasta.gz
 
 samtools faidx \
- data/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
- -o data/assemble_data/PacBio/durio_zibethinus.contigs.fai
+ $dir/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
+ -o $dir/assemble_data/PacBio/durio_zibethinus.contigs.fai
