@@ -1,0 +1,107 @@
+/sw/bioinfo/quast/4.5.4/rackham/bin/quast.py data/assemble_data/PacBio/durio_zibethinus.contigs.fasta -o data/assemble_data/PacBio/ -R data/assemble_data/Ref/ref_durio_zibethinus.fasta -t 4
+
+Version: 4.5.4
+
+System information:
+  OS: Linux-3.10.0-1062.18.1.el7.x86_64-x86_64-with-centos-7.7.1908-Core (linux_64)
+  Python version: 2.7.6
+  CPUs number: 20
+
+Started: 2020-04-28 22:00:13
+
+Logging to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/quast.log
+NOTICE: Output directory already exists. Existing Nucmer alignments can be used
+
+CWD: /domus/h1/daniagst/Genome-Analysis
+Main parameters: 
+  Threads: 4, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  data/assemble_data/Ref/ref_durio_zibethinus.fasta ==> ref_durio_zibethinus
+
+Contigs:
+  Pre-processing...
+  data/assemble_data/PacBio/durio_zibethinus.contigs.fasta ==> durio_zibethinus.contigs
+
+2020-04-28 22:00:20
+Running Basic statistics processor...
+  Reference genome:
+    ref_durio_zibethinus.fasta, length = 26551601, num fragments = 1, GC % = 30.98
+  Contig files: 
+    durio_zibethinus.contigs
+  Calculating N50 and L50...
+    durio_zibethinus.contigs, N50 = 380819, L50 = 27, Total length = 37535010, GC % = 30.97, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/basic_stats/GC_content_plot.pdf
+  Drawing durio_zibethinus.contigs GC content plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/basic_stats/durio_zibethinus.contigs_GC_content_plot.pdf
+Done.
+
+2020-04-28 22:00:25
+Running Contig analyzer...
+  durio_zibethinus.contigs
+  Logging to files /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/contigs_report_durio_zibethinus-contigs.stdout and contigs_report_durio_zibethinus-contigs.stderr...
+  Using existing alignments... 
+  Analysis is finished.
+
+  Creating total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2020-04-28 22:01:08
+Running NA-NGA calculation...
+  durio_zibethinus.contigs, Largest alignment = 1260946, NA50 = 158876, NGA50 = 281393, LA50 = 49, LGA50 = 25
+  Drawing cumulative plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/aligned_stats/NGAx_plot.pdf
+Done.
+
+2020-04-28 22:01:10
+Running Genome analyzer...
+  NOTICE: No file with genes provided. Use the -G option if you want to specify it.
+  NOTICE: No file with operons provided. Use the -O option if you want to specify it.
+  durio_zibethinus.contigs
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2020-04-28 22:01:26
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-04-28 22:01:28
+RESULTS:
+  Text versions of total report are saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/report.html
+  PDF version (tables and plots) is saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/report.pdf
+  Icarus (contig browser) is saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/icarus.html
+  Log saved to /domus/h1/daniagst/Genome-Analysis/data/assemble_data/PacBio/quast.log
+
+Finished: 2020-04-28 22:01:28
+Elapsed time: 0:01:14.724348
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

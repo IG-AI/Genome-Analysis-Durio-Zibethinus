@@ -1,0 +1,4 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                  # misassemblies      # relocations      # translocations      # inversions  # misassembled contigs  Misassembled contigs length  # local misassemblies  # unaligned mis. contigs  # mismatches  # indels      # indels (<= 5 bp)      # indels (> 5 bp)  Indels length
+durio_zibethinus.contigs  241              240                0                     1                 134                     23180502                     266                    19                        90232         48319     45887                   2432                   92411        
