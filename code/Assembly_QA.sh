@@ -14,9 +14,10 @@ module load MUMmer
 
 dir="~/Genome-Analysis/data/assemble_data"
 
-# PacBio QUAST                                                                 quast.py \
-    $dir/PacBio/durio_zibethinus.contigs.fasta \
-    -o $dir/PacBio/ \
+# PacBio QUAST                                                                 
+quast.py \
+    $dir/PacBio/high_sense/durio_zibethinus_high_sense.contigs.fasta \
+    -o $dir/PacBio/high_sense \
     -R $dir/Ref/ref_durio_zibethinus.fasta \
     -t 4
 
@@ -28,12 +29,12 @@ quast.py \
     -t 4
 
 # PacBio MUMmer
-nucmer --threads=4 --maxmatch -p durio_zibethinus_pacbio \
+nucmer --threads=4 --maxmatch -p durio_zibethinus_pacbio_high_sense \
     $dir/Ref/ref_durio_zibethinus.fasta \
-    $dir/PacBio/default/durio_zibethinus.contigs.fasta
+    $dir/PacBio/high_sense/durio_zibethinus.contigs.fasta
 
-mummerplot --layout -t png --large --filter -p durio_zibethinus_pacbio  \
-    durio_zibethinus_pacbio.delta
+mummerplot --layout -t png --large --filter -p durio_zibethinus_pacbio_high_sense  \
+    durio_zibethinus_pacbio_high_sense.delta
 
 # Illumina MUMmer
 nucmer --threads=4 --maxmatch -p durio_zibethinus_illumina \

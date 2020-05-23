@@ -1,0 +1,51 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                     durio_zibethinus_high_sense.contigs
+# contigs (>= 0 bp)          927                                
+# contigs (>= 1000 bp)       927                                
+# contigs (>= 5000 bp)       879                                
+# contigs (>= 10000 bp)      646                                
+# contigs (>= 25000 bp)      131                                
+# contigs (>= 50000 bp)      54                                 
+Total length (>= 0 bp)       38309010                           
+Total length (>= 1000 bp)    38309010                           
+Total length (>= 5000 bp)    38155775                           
+Total length (>= 10000 bp)   36317569                           
+Total length (>= 25000 bp)   28234394                           
+Total length (>= 50000 bp)   25815779                           
+# contigs                    927                                
+Largest contig               2459156                            
+Total length                 38309010                           
+Reference length             26551601                           
+GC (%)                       31.05                              
+Reference GC (%)             30.98                              
+N50                          422311                             
+NG50                         748592                             
+N75                          23338                              
+NG75                         355131                             
+L50                          22                                 
+LG50                         12                                 
+L75                          152                                
+LG75                         24                                 
+# misassemblies              274                                
+# misassembled contigs       166                                
+Misassembled contigs length  25558704                           
+# local misassemblies        298                                
+# unaligned mis. contigs     22                                 
+# unaligned contigs          372 + 288 part                     
+Unaligned length             6192720                            
+Genome fraction (%)          97.627                             
+Duplication ratio            1.239                              
+# N's per 100 kbp            0.00                               
+# mismatches per 100 kbp     349.21                             
+# indels per 100 kbp         181.54                             
+Largest alignment            1344941                            
+Total aligned length         32097897                           
+NA50                         176728                             
+NGA50                        296688                             
+NA75                         14359                              
+NGA75                        159982                             
+LA50                         52                                 
+LGA50                        26                                 
+LA75                         294                                
+LGA75                        56                                 

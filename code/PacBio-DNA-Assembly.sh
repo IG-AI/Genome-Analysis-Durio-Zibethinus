@@ -46,5 +46,5 @@ canu -assemble \
   -pacbio-corrected $dir/trimmed_data/durio_zibethinus_high_sense.trimmedReads.fasta.gz
 
 samtools faidx \
- $dir/assemble_data/PacBio/durio_zibethinus.contigs.fasta \
- -o $dir/assemble_data/PacBio/durio_zibethinus.contigs.fai
+ $dir/assemble_data/PacBio/high_sense/durio_zibethinus_high_sense.contigs.fasta \
+ -o $dir/assemble_data/PacBio/high_sense/durio_zibethinus_high_sense.contigs.fai

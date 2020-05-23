@@ -1,0 +1,14 @@
+Assembly	durio_zibethinus_high_sense.contigs
+# misassemblies	274
+    # relocations	273
+    # translocations	0
+    # inversions	1
+# misassembled contigs	166
+Misassembled contigs length	25558704
+# local misassemblies	298
+# unaligned mis. contigs	22
+# mismatches	90521
+# indels	47057
+    # indels (<= 5 bp)	44596
+    # indels (> 5 bp)	2461
+Indels length	90323
