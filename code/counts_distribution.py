@@ -1,5 +1,6 @@
 import sys, os
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 dir = sys.argv[1]
 
@@ -17,8 +18,6 @@ for filename in os.listdir(dir):
                 i += 1
                 gene.append(i)
                 count.append(int(line.split()[1]))
-    #print(count)
-    plt.hist(count, color='blue', edgecolor='black', bins=(len(count)), range=(0, 5000))
+    #plt.hist(count, color='blue', edgecolor='black', bins=(len(count)))
+    sns.distplot(count)
     plt.savefig(filename+".png")
-
-gi
