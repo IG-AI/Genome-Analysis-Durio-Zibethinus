@@ -2,7 +2,7 @@
 
 #SBATCH -A g2020008
 #SBATCH -p core
-#SBATCH -n 4
+#SBATCH -n 6
 #SBATCH -t 24:00:00
 #SBATCH -J Annotation
 #SBATCH --mail-type=ALL
@@ -11,4 +11,4 @@
 module load bioinfo-tools
 module load maker 
 
-maker -c 8 maker_opts.ctl maker_bopts.ctl maker_exe.ctl
+maker -c 12 maker_opts.ctl maker_bopts.ctl maker_exe.ctl
